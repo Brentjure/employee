@@ -120,18 +120,21 @@ The Employee Management Application is a full-stack system for managing employee
 
 ## API Endpoints
 
-### **POST** `/api/employees`
+### **POST** `/api/v1/post-employee-details`
 - **Description:** Receives employee data and publishes it to RabbitMQ.
 - **Payload Example:**
   ```json
   {
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com"
-  }
+    "first_name":"Jonathan", 
+    "last_name":"Otieno", 
+    "email":"jonanthan.otieno@example.com", 
+    "gender":"M", 
+    "position": "solution architect"
+       
+}
   ```
 
-### **GET** `/api/employees`
+### **GET** `/api/v1/get-all-employees`
 - **Description:** Retrieves all employees from the database.
 
 ---
