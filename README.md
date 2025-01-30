@@ -2,11 +2,16 @@
 
 ## Overview
 The Employee Management Application is a full-stack system for managing employee details. It uses Angular for the frontend, Java Spring Boot for the backend, RabbitMQ for message queuing, and MySQL as the database.
+
 ![Screenshot 2025-01-30 114716](https://github.com/user-attachments/assets/d48ea43f-1b4c-4fc4-9d5f-09745725e3d3)
-![Uploading Screenshot 2025-01-30 145512.png…]()
+
+![Screenshot 2025-01-30 145512](https://github.com/user-attachments/assets/cb120c2e-de5f-4187-b76e-bc3b31c4059e)
+
 
 ![Screenshot 2025-01-17 094926](https://github.com/user-attachments/assets/3451aea8-8290-45a7-ab25-6da441de8481)
 ---
+
+
 ![Screenshot 2025-01-17 094950](https://github.com/user-attachments/assets/8e392090-819a-496a-b59a-8cbd8ea62ee0)
 
 ## Features
