@@ -1,23 +1,33 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 
 @Component({
   selector: 'app-employees',
-  imports: [],
+  imports: [HttpClientModule],
   templateUrl: './employees.component.html',
   styleUrl: './employees.component.css'
 })
 export class EmployeesComponent {
   employeeList:any[]= [];
 
-  // http = inject(HttpClient);
+  http = inject(HttpClient);
 
-  // getAllEmployees(){
-  //   this.http.get('http://localhost:8080/api/v1/get-all-employees').subscribe((res:any)=>{
-  //     console.log(res)
-  //     // this.employeeList = res;
+  ngOnInit(): void {
+    this.getAllEmployees();
+  }
 
-  //   })
-  // }
+  getAllEmployees(){
+
+    try {
+      this.http.get('http://localhost:8080/api/v1/get-all-employees').subscribe((res:any)=>{
+        console.log(res)
+        this.employeeList = res;
+        })
+      
+    } catch (error) {
+      console.log(error)    
+    }
+    
+  }
 
 }
