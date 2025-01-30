@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="employee">
+    <h1>Add employee:</h1>
+    <form>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">First name</label>
+            <input 
+            type="text" 
+            [(ngModel)]="employeeObj.first_name"
+            name="first_name" 
+            class="form-control" 
+            id="formGroupExampleInput" 
+            placeholder="First name">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Last name:</label>
+            <input 
+            type="text" 
+            [(ngModel)]="employeeObj.last_name"
+            name="last_name" 
+            class="form-control" 
+            id="formGroupExampleInput2" 
+            placeholder="Last name">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput3" class="form-label">Email</label>
+            <input type="text" 
+                [(ngModel)]="employeeObj.email"
+                name="email" 
+                class="form-control" 
+                id="formGroupExampleInput3" 
+                placeholder="name@example.com">
+        </div>
+        
+        <select placeholder="Gender" class="form-select" [(ngModel)]="employeeObj.gender" name="gender" aria-label="Default select example">
+            <!-- <option selected>Gender</option> -->
+            <option value="M">Male</option>
+            <option value="F">Female</option>
+        </select>
+        <div class="mb-3">
+            <label for="formGroupExampleInput4" class="form-label">position</label>
+            <input 
+            [(ngModel)]="employeeObj.position"
+            name="position" 
+            type="text" 
+            class="form-control" 
+            id="formGroupExampleInput4" 
+            placeholder="position">
+        </div>
+        <div class="col-12" >
+            <button type="submit" 
+                class="btn btn-primary" 
+                style="background-color: #e28743; border: none;"
+                (click)="onSubmitEmployee()" 
+                >Submit</button>
+          </div>
+    </form>
+</div>
+</div>

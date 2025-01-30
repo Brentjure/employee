@@ -6,6 +6,7 @@ import com.brent.employees.entity.EmployeeEntity;
 import com.brent.employees.repository.EmployeeRepo;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,12 +22,17 @@ public class Consumer {
         // Extract the EmployeeEntity from EmployeeResponseBody
         EmployeeEntity employeeEntity = employeeResponseBody.getEmployee();
 
-        // Save the EmployeeEntity to the database
-        employeeRepo.save(employeeEntity);
+        try {
+            // Save the EmployeeEntity to the database
+            employeeRepo.save(employeeEntity);
+            System.out.println("\nSaved employee entity to the database: " + employeeEntity);
 
-        System.out.println("\nSaved employee entity to the database: " + employeeEntity);
+        } catch (DataIntegrityViolationException e){
 
-
+            // Handle duplicate email exception
+            System.err.println("Error saving employee: Email already exists.");
+            //System.err.println("Duplicate email: " + employeeEntity.getEmail());
+        }
 
 
 
